@@ -1,0 +1,121 @@
+<html ng-app="test_percDisplay">
+<head>
+	<title>Percent Display Directive</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/ngPercentDisplay.css" />
+</head>
+
+
+<body ng-controller="mainController" style="font-family: verdana">
+
+    <center>
+
+        <h2>ngPercentDisplay Directive</h2>
+
+
+        <div style="margin: 50px; width: 700px">
+
+            <table style="font-family: verdana">
+                <tbody>
+                    <tr>
+                        <td>
+                            <b>Constant value</b><br />
+                            <small>Use a constant value to set the directive. Uses the default colors</small>
+                            <br /><br />
+                            <code>
+                                &lt;percent-display percent="30" side="60" colors=""&gt;&lt;/percent-display&gt;
+                            </code>
+                        </td>
+                        <td>
+                            <percent-display percent="30" side="60" colors=""></percent-display>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+
+                    <tr><td colspan="3"><hr /></td></tr>
+
+                    <tr>
+                        <td>
+                            <b>Dynamically change value</b><br />
+                            <small>Click the button to see the value of the percentage change.</small>
+                            <br /><br />
+                            <code>
+                                &lt;percent-display percent="value" side="60" colors="#CCE0CC #006400"&gt;&lt;/percent-display&gt;
+                            </code>
+                        </td>
+                        <td>
+                            <percent-display percent="value" side="60" colors="#CCE0CC #006400"></percent-display>
+                        </td>
+                        <td>
+                            <button ng-click="setVal()">Click</button>
+                        </td>
+                    </tr>
+
+                    <tr><td colspan="3"><hr /></td></tr>
+
+                    <tr>
+                        <td>
+                            <b>Use your own colors</b><br />
+                            <small>By setting the attribute colors with html colors separated by spaces. The first is the circle, the second the percentage and the third the inner background</small>
+                            <br /><br />
+                            <code>
+                                &lt;percent-display percent="value" side="60" colors="#F8D0D8 #DC143C"&gt;&lt;/percent-display&gt;
+                            </code>
+                        </td>
+                        <td>
+                            <percent-display percent="75" side="60" colors="#F8D0D8 #DC143C"></percent-display>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>         
+
+                    <tr><td colspan="3"><hr /></td></tr>
+
+                    <tr>
+                        <td>
+                            <b>Set the desired size</b><br />
+                            <small>The side attribute represents the size in pixels of a square side in which the graph will be drawn.</small>
+                            <br /><br />
+                            <code>
+                                &lt;percent-display percent="62" side="120" colors="#C2C2FF #3333FF"&gt;&lt;/percent-display&gt;
+                            </code>
+                        </td>
+                        <td colspan="2">
+                            <percent-display percent="62" side="120" colors="#C2C2FF #3333FF"></percent-display>
+                        </td>
+
+                    </tr>                             
+                </tbody>
+            </table>
+
+        </div>
+    </center>
+
+
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/moment.min.js" type="text/javascript"></script>
+    <script src="js/moment-pt-br.js" type="text/javascript"></script>
+    <script src="js/ngPercentDisplay.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+        var app = angular.module('test_percDisplay', ['ngPercentDisplay']);
+
+        app.controller('mainController', function($scope) {
+
+            $scope.value = 76;
+            $scope.valor2 = 29;
+
+            $scope.setVal = function() {
+                $scope.value = Math.floor((Math.random() * 100) + 1);;
+            }
+        });
+
+	</script>
+</body>
+</html>
