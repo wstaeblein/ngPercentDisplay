@@ -27,7 +27,7 @@
                     side = attrs.side || 50,
                     fontSize = Math.floor(side / 5);
                     colors = attrs.colors.split(' ');
-                var deg;
+                var deg, strdeg;
 
                 if (!colors[0]) { colors[0] = '#DADADA'; }
                 if (!colors[1]) { colors[1] = '#606060'; }
@@ -45,14 +45,16 @@
                             leftSide.hide();
                             
                             // Adjust right
-                            deg = 180 - (newvalue / 100 * 360)
-                            rightSide.css({ "-webkit-transform": "rotateZ(-" + deg + "deg)" });
+                            deg = 180 - (newvalue / 100 * 360);
+                           	strdeg = "rotateZ(-" + deg + "deg)";
+                            rightSide.css({ "transform": strdeg, "-webkit-transform": strdeg, "-moz-transform": strdeg, "-ms-transform": strdeg });
                         } else {
                             // Adjust left
                             leftSide.show();
-                            deg = 180 - ((newvalue - 50) / 100 * 360)
-                            leftSide.css({ "-webkit-transform": "rotateZ(-" + deg + "deg)" });
-                            rightSide.css({ "-webkit-transform": "rotateZ(0deg)" });
+                            deg = 180 - ((newvalue - 50) / 100 * 360);
+                            strdeg = "rotateZ(-" + deg + "deg)";
+                            leftSide.css({ "transform": strdeg, "-webkit-transform": strdeg, "-moz-transform": strdeg, "-ms-transform": strdeg });
+                            rightSide.css({ "transform": "rotateZ(0deg)", "-webkit-transform": "rotateZ(0deg)", "-moz-transform": "rotateZ(0deg)", "-ms-transform": "rotateZ(0deg)"  });
                         }
                     }
                 });

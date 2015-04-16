@@ -24,11 +24,17 @@
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         -webkit-transform-origin: 100% 50%;
+        -moz-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
     }
     .ngpercentdisplay .ngperdispright span {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         -webkit-transform-origin: 0% 50%;
+        -moz-transform-origin: 0% 50%;
+        -ms-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
     }
 .ngpercentdisplay:before,
 .ngpercentdisplay:after {
@@ -38,6 +44,9 @@
     top: 50%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
     .ngpercentdisplay:before {
         background-color: #FFFFFF;
