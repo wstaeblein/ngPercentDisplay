@@ -47,14 +47,14 @@
                             // Adjust right
                             deg = 180 - (newvalue / 100 * 360);
                            	strdeg = "rotateZ(-" + deg + "deg)";
-                            rightSide.css({ "transform": strdeg, "-webkit-transform": strdeg, "-moz-transform": strdeg, "-ms-transform": strdeg });
+                            rightSide.css({ "transform": strdeg, "-webkit-transform": strdeg, "-moz-transform": strdeg, "msTransform": "rotate(-" + deg + "deg)" });
                         } else {
                             // Adjust left
                             leftSide.show();
                             deg = 180 - ((newvalue - 50) / 100 * 360);
                             strdeg = "rotateZ(-" + deg + "deg)";
-                            leftSide.css({ "transform": strdeg, "-webkit-transform": strdeg, "-moz-transform": strdeg, "-ms-transform": strdeg });
-                            rightSide.css({ "transform": "rotateZ(0deg)", "-webkit-transform": "rotateZ(0deg)", "-moz-transform": "rotateZ(0deg)", "-ms-transform": "rotateZ(0deg)"  });
+                            leftSide.css({ "transform": strdeg, "-webkit-transform": strdeg, "-moz-transform": strdeg, "msTransform": "rotate(-" + deg + "deg)" });
+                            rightSide.css({ "transform": "rotateZ(0deg)", "-webkit-transform": "rotateZ(0deg)", "-moz-transform": "rotateZ(0deg)", "msTransform": "rotate(0deg)"  });
                         }
                     }
                 });
